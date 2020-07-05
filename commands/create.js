@@ -19,7 +19,7 @@ module.exports = {
     const spinner = ora("Loading files").start();
     console.log("");
     axios
-      .get("https://api.github.com/repos/Bot-Academia/gitty/contents/index.js")
+      .get("https://api.github.com/repos/Bot-Academia/disnode/contents/template/index.js")
       .then((res) => {
         text = res.data.content;
         let buff = new Buffer(text, "base64");
