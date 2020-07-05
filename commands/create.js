@@ -19,20 +19,36 @@ module.exports = {
     const spinner = ora("Loading files").start();
     console.log("");
     axios
-      .get("https://api.github.com/repos/Bot-Academia/disnode/contents/template/index.js")
-      .then((res) => {
-        text = res.data.content;
-        let buff = new Buffer(text, "base64");
-        let data = buff.toString("ascii");
-        fs.writeFile(
-          path.join(process.cwd(), `${appname}/index.js`),
-          data,
-          function (e) {
-            if (e) console("some error");
-            spinner.stop();
-            console.log("Saved!");
-          }
-        );
+      .get(
+        "https://api.github.com/repos/Bot-Academia/disnode/contents/template"
+      )
+      .then(async (res) => {
+        arr = res.data;
+        var i = 0;
+        while (i < arr.length) {
+          name = arr[i].name;
+          console.log("");
+          console.log(name);
+          await axios
+            .get(
+              `https://api.github.com/repos/Bot-Academia/disnode/contents/template/${name}`
+            )
+            .then((res) => {
+              text = res.data.content;
+              let buff = new Buffer(text, "base64");
+              let data = buff.toString("ascii");
+              fs.appendFileSync(
+                path.join(process.cwd(), `${appname}/${name}`),
+                data,
+                function (e) {
+                  if (e) console("some error");
+                  console.log("Saved!");
+                }
+              );
+            });
+          i++;
+        }
+        spinner.stop();
       });
   },
 };
