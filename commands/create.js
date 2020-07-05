@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const https = require("https");
 const axios = require("axios");
+const ora = require("ora");
 
 module.exports = {
   async execute(appname) {
@@ -15,16 +16,10 @@ module.exports = {
     });
 
     var data = null;
+    const spinner = ora("Loading files").start();
+    console.log("");
     axios
-      .get(
-        "https://api.github.com/repos/Bot-Academia/gitty/contents/index.js",
-        {
-          headers: {
-            authorization:
-              "token " + "ddefecd775fc87c44c9d7fc14018bb7980396f89",
-          },
-        }
-      )
+      .get("https://api.github.com/repos/Bot-Academia/gitty/contents/index.js")
       .then((res) => {
         text = res.data.content;
         let buff = new Buffer(text, "base64");
@@ -33,7 +28,8 @@ module.exports = {
           path.join(process.cwd(), `${appname}/index.js`),
           data,
           function (e) {
-            if (e) throw e;
+            if (e) console("some error");
+            spinner.stop();
             console.log("Saved!");
           }
         );
