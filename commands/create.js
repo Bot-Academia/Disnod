@@ -11,11 +11,7 @@ module.exports = {
   async execute(appname) {
     await showBanner("DisNode", "CLI tool for discord.js");
     console.log("");
-
-    var inquirer = require("inquirer");
-
-    console.log("Hi, welcome to Node Pizza");
-
+    
     var questions = [
       {
         type: "confirm",
@@ -26,11 +22,12 @@ module.exports = {
     ];
 
     inquirer.prompt(questions).then((answers) => {
+      
       if (answers.template == true) {
+        
         fs.mkdir(path.join(process.cwd(), appname), () => {
           console.log(chalk.green("Created basic template"));
         });
-
         var data = null;
         const spinner = ora("Loading files").start();
         console.log("");
