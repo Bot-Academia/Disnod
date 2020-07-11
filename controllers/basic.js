@@ -6,7 +6,7 @@ const axios = require("axios");
 const ora = require("ora");
 
 module.exports = {
-  async execute(appname) {
+  async execute(appname, author) {
     fs.mkdir(path.join(process.cwd(), appname), () => {
       console.log(chalk.green("Created basic template"));
     });
@@ -44,6 +44,22 @@ module.exports = {
             });
           i++;
         }
+        fs.readFile(`${appname}/package.json`, "utf-8", function (err, data) {
+          if (err) throw err;
+
+          var newValue = data.replace(
+            /"author": "",/gim,
+            ` "author": "` + author + `",`
+          );
+
+          fs.writeFile(`${appname}/package.json`, newValue, "utf-8", function (
+            err,
+            data
+          ) {
+            if (err) throw err;
+            console.log("Done!");
+          });
+        });
         spinner.stop();
       });
   },

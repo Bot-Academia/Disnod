@@ -35,17 +35,17 @@ module.exports = {
 
     inquirer.prompt(questions).then((answers) => {
       if (answers.template === "basic") {
-        basic.execute(appname);
+        basic.execute(appname, answers.author);
       }
 
       if (answers.template === "default (recommended)") {
         console.log("default");
-        default_control.execute(appname);
+        default_control.execute(appname, answers.author);
       }
 
       if (answers.template === "advanced") {
         console.log("advanced");
-        advanced.execute(appname);
+        advanced.execute(appname, answers.author);
       }
     });
   },
