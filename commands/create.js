@@ -35,7 +35,7 @@ module.exports = {
 
         axios
           .get(
-            "https://api.github.com/repos/Bot-Academia/disnode/contents/template"
+            "https://api.github.com/repos/Bot-Academia/disnode/contents/template/basic"
           )
           .then(async (res) => {
             arr = res.data;
@@ -46,7 +46,7 @@ module.exports = {
               console.log(name);
               await axios
                 .get(
-                  `https://api.github.com/repos/Bot-Academia/disnode/contents/template/${name}`
+                  `https://api.github.com/repos/Bot-Academia/disnode/contents/template/basic/${name}`
                 )
                 .then((res) => {
                   text = res.data.content;
@@ -102,7 +102,7 @@ module.exports = {
 
           axios
             .get(
-              "https://api.github.com/repos/Bot-Academia/disnode/contents/template"
+              "https://api.github.com/repos/Bot-Academia/disnode/contents/template/advanced"
             )
             .then(async (res) => {
               arr = res.data;
@@ -111,23 +111,71 @@ module.exports = {
                 name = arr[i].name;
                 console.log("");
                 console.log(name);
-                await axios
-                  .get(
-                    `https://api.github.com/repos/Bot-Academia/disnode/contents/template/${name}`
-                  )
-                  .then((res) => {
-                    text = res.data.content;
-                    let buff = Buffer.from(text, "base64");
-                    let data = buff.toString("ascii");
-                    fs.appendFileSync(
-                      path.join(process.cwd(), `${appname}/${name}`),
-                      data,
-                      function (e) {
-                        if (e) console("some error");
-                        console.log("Saved!");
+                if (arr[i].type === "file") {
+                  await axios
+                    .get(
+                      `https://api.github.com/repos/Bot-Academia/disnode/contents/template/advanced/${name}`
+                    )
+                    .then((res) => {
+                      text = res.data.content;
+                      let buff = Buffer.from(text, "base64");
+                      let data = buff.toString("ascii");
+                      fs.appendFileSync(
+                        path.join(process.cwd(), appname, name),
+                        data,
+                        function (e) {
+                          if (e) console("some error");
+                          console.log("Saved!");
+                        }
+                      );
+                    });
+                } else {
+                  fs.mkdir(
+                    path.join(process.cwd(), appname, "commands"),
+                    () => {
+                      console.log(chalk.green("Creating commands"));
+                    }
+                  );
+
+                  await axios
+                    .get(
+                      "https://api.github.com/repos/Bot-Academia/disnode/contents/template/advanced/commands"
+                    )
+                    .then(async (res) => {
+                      a = res.data;
+                      var j = 0;
+                      while (j < a.length) {
+                        name = a[j].name;
+                        console.log("");
+                        console.log("commands/" + name);
+                        if (a[j].type === "file") {
+                          await axios
+                            .get(
+                              `https://api.github.com/repos/Bot-Academia/disnode/contents/template/advanced/commands/${name}`
+                            )
+                            .then((res) => {
+                              text = res.data.content;
+                              let buff = Buffer.from(text, "base64");
+                              let data = buff.toString("ascii");
+                              fs.appendFileSync(
+                                path.join(
+                                  process.cwd(),
+                                  appname,
+                                  "commands",
+                                  name
+                                ),
+                                data,
+                                function (e) {
+                                  if (e) console("some error");
+                                  console.log("Saved!");
+                                }
+                              );
+                            });
+                        }
+                        j++;
                       }
-                    );
-                  });
+                    });
+                } //else ends
                 i++;
               }
               fs.appendFile(
