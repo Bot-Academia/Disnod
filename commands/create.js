@@ -22,6 +22,12 @@ module.exports = {
           return val.toLowerCase();
         },
       },
+      {
+        type: "input",
+        name: "author",
+        message: "Author name",
+        default: "(john)",
+      },
     ];
 
     inquirer.prompt(questions).then((answers) => {
@@ -63,6 +69,27 @@ module.exports = {
                 });
               i++;
             }
+            fs.readFile(`${appname}/package.json`, "utf-8", function (
+              err,
+              data
+            ) {
+              if (err) throw err;
+
+              var newValue = data.replace(
+                /"author": "",/gim,
+                ` "author": "` + answers.author + `",`
+              );
+
+              fs.writeFile(
+                `${appname}/package.json`,
+                newValue,
+                "utf-8",
+                function (err, data) {
+                  if (err) throw err;
+                  console.log("Done!");
+                }
+              );
+            });
             spinner.stop();
           });
       }
@@ -152,6 +179,27 @@ module.exports = {
               } //else ends
               i++;
             }
+            fs.readFile(`${appname}/package.json`, "utf-8", function (
+              err,
+              data
+            ) {
+              if (err) throw err;
+
+              var newValue = data.replace(
+                /"author": "",/gim,
+                ` "author": "` + answers.author + `",`
+              );
+
+              fs.writeFile(
+                `${appname}/package.json`,
+                newValue,
+                "utf-8",
+                function (err, data) {
+                  if (err) throw err;
+                  console.log("Done!");
+                }
+              );
+            });
             spinner.stop();
           });
       }
@@ -271,6 +319,27 @@ module.exports = {
                   console.log(".env file created!");
                 }
               );
+              fs.readFile(`${appname}/package.json`, "utf-8", function (
+                err,
+                data
+              ) {
+                if (err) throw err;
+
+                var newValue = data.replace(
+                  /"author": "",/gim,
+                  ` "author": "` + answers.author + `",`
+                );
+
+                fs.writeFile(
+                  `${appname}/package.json`,
+                  newValue,
+                  "utf-8",
+                  function (err, data) {
+                    if (err) throw err;
+                    console.log("Done!");
+                  }
+                );
+              });
               spinner.stop();
             });
         });
