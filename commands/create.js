@@ -117,8 +117,7 @@ module.exports = {
                   )
                   .then((res) => {
                     text = res.data.content;
-                    let buff = new Buffer(text, "base64");
-                    let data = buff.toString("ascii");
+                    let data = text.toString("ascii");
                     fs.appendFileSync(
                       path.join(process.cwd(), `${appname}/${name}`),
                       data,
