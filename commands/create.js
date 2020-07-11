@@ -25,6 +25,12 @@ module.exports = {
           return val.toLowerCase();
         },
       },
+      {
+        type: "input",
+        name: "author",
+        message: "Author name",
+        default: "(john)",
+      },
     ];
 
     inquirer.prompt(questions).then((answers) => {
@@ -34,7 +40,6 @@ module.exports = {
 
       if (answers.template === "default (recommended)") {
         console.log("default");
-
         default_control.execute(appname);
       }
 
