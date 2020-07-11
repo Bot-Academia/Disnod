@@ -50,7 +50,7 @@ module.exports = {
                 )
                 .then((res) => {
                   text = res.data.content;
-                  let buff = new Buffer(text, "base64");
+                  let buff = Buffer.from(text, "base64");
                   let data = buff.toString("ascii");
                   fs.appendFileSync(
                     path.join(process.cwd(), `${appname}/${name}`),
@@ -117,7 +117,7 @@ module.exports = {
                   )
                   .then((res) => {
                     text = res.data.content;
-                    let buff = new Buffer(text, "base64");
+                    let buff = Buffer.from(text, "base64");
                     let data = buff.toString("ascii");
                     fs.appendFileSync(
                       path.join(process.cwd(), `${appname}/${name}`),
