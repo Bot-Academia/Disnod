@@ -5,6 +5,7 @@ const https = require("https");
 const axios = require("axios");
 const ora = require("ora");
 var inquirer = require("inquirer");
+const execa = require("execa");
 
 module.exports = {
   async execute(appname, author) {
@@ -128,6 +129,14 @@ module.exports = {
               }
             );
           });
+          try {
+            await execa("npm", ["install"], {
+              cwd: process.cwd() + "/" + appname,
+            });
+          } catch (err) {
+            console.log(err);
+            throw err;
+          }
           spinner.stop();
         });
     });

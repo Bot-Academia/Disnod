@@ -4,6 +4,7 @@ const path = require("path");
 const https = require("https");
 const axios = require("axios");
 const ora = require("ora");
+const execa = require("execa");
 
 module.exports = {
   async execute(appname, author) {
@@ -60,6 +61,14 @@ module.exports = {
             console.log("Done!");
           });
         });
+        try {
+          await execa("npm", ["install"], {
+            cwd: process.cwd() + "/" + appname,
+          });
+        } catch (err) {
+          console.log(err);
+          throw err;
+        }
         spinner.stop();
       });
   },
