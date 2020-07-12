@@ -10,9 +10,9 @@ const pkg = require("../package");
 // register version flag
 // program.version(version);
 
-// (async () => {
+//  (async () => {
 //   await showBanner("Disnode", "CLI tool for discord.js");
-// })();
+//  })();
 
 program.version(pkg.version).usage("<command> [options]");
 
