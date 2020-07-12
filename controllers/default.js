@@ -9,7 +9,7 @@ const execa = require("execa");
 module.exports = {
   async execute(appname, author) {
     fs.mkdir(path.join(process.cwd(), appname), () => {
-      console.log(chalk.green("Created basic template"));
+      console.log(chalk.green("Created default template"));
     });
     var data = null;
     const spinner = ora("Loading files").start();

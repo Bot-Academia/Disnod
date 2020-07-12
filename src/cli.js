@@ -10,15 +10,11 @@ const pkg = require("../package");
 // register version flag
 // program.version(version);
 
-//  (async () => {
-//   await showBanner("Disnode", "CLI tool for discord.js");
-//  })();
-
 program.version(pkg.version).usage("<command> [options]");
 
 program
-  .command("create <appname>")
-  .description("create a basic template")
+  .command("create <botname>")
+  .description("create a discord.js template")
   .action((appname) => {
     create.execute(appname);
   });

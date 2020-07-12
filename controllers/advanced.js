@@ -29,7 +29,7 @@ module.exports = {
     ];
     inquirer.prompt(advanced).then((choice) => {
       fs.mkdir(path.join(process.cwd(), appname), () => {
-        console.log(chalk.green("Created basic template"));
+        console.log(chalk.green("Created advanced template"));
       });
       var data = null;
       const spinner = ora("Loading files").start();
