@@ -29,7 +29,7 @@ module.exports = {
         type: "input",
         name: "author",
         message: "Author name",
-        default: "(john)",
+        default: "john",
       },
     ];
 
