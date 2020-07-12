@@ -53,20 +53,13 @@ module.exports = {
             ` "author": "` + author + `",`
           );
 
-          var value = data.replace(
-            /"name": "discordbot",/gim,
-            ` "name": "` + appname + `",`
-          );
-
-          fs.writeFile(
-            `${appname}/package.json`,
-            [newValue, value],
-            "utf-8",
-            function (err, data) {
-              if (err) throw err;
-              console.log("Done!");
-            }
-          );
+          fs.writeFile(`${appname}/package.json`, newValue, "utf-8", function (
+            err,
+            data
+          ) {
+            if (err) throw err;
+            console.log("Done!");
+          });
         });
 
         try {
