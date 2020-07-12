@@ -17,7 +17,7 @@ module.exports = {
 
     axios
       .get(
-        "https://api.github.com/repos/Bot-Academia/disnode/contents/template/basic"
+        "https://api.github.com/repos/Bot-Academia/disnod/contents/template/basic"
       )
       .then(async (res) => {
         arr = res.data;
@@ -28,7 +28,7 @@ module.exports = {
           console.log(name);
           await axios
             .get(
-              `https://api.github.com/repos/Bot-Academia/disnode/contents/template/basic/${name}`
+              `https://api.github.com/repos/Bot-Academia/disnod/contents/template/basic/${name}`
             )
             .then((res) => {
               text = res.data.content;
