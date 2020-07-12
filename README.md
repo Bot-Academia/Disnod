@@ -3,6 +3,9 @@
 	<p align="center"> CLI tool for discord.js </p>
 </p>
 
+[![NPM](https://nodei.co/npm/disnod.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/disnod/) 
+
+![npm](https://img.shields.io/npm/dw/disnod?style=for-the-badge) ![npm](https://img.shields.io/npm/v/disnod?style=for-the-badge)
 ---
 
 **Chat: _[Discord group](https://discord.gg/m8297QY)_**
