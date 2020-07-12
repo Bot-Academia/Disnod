@@ -92,34 +92,12 @@ module.exports = {
             /"author": "",/gim,
             ` "author": "` + author + `",`
           );
-
           fs.writeFile(`${appname}/package.json`, newValue, "utf-8", function (
             err,
             data
           ) {
             if (err) throw err;
-          });
-        });
-        fs.readFile(`${appname}/package.json`, "utf-8", function (err, data) {
-          if (err) throw err;
-
-          var newValue = data.replace(
-            /"name": "discordbot",/gim,
-            ` "name": "` + appname + `",`
-          );
-
-          fs.writeFile(`${appname}/package.json`, newValue, "utf-8", function (
-            err,
-            data
-          ) {
-            if (err) throw err;
-            console.log("\n \n");
-            console.log(
-              chalk.red("Follow the given commands to run your bot!")
-            );
-            console.log(`  ` + chalk.green(`  cd ${appname}`));
-            console.log(`  ` + chalk.green(`  npm install`));
-            console.log(`  ` + chalk.green(`  npm start`));
+            console.log("Done!");
           });
         });
         try {
