@@ -12,7 +12,7 @@ const advanced = require("../controllers/advanced");
 
 module.exports = {
   async execute(appname) {
-    await showBanner("DisNode", "CLI tool for discord.js");
+    await showBanner("disnod", "CLI tool for discord.js");
     console.log("");
 
     var questions = [

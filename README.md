@@ -3,16 +3,15 @@
 	<p align="center"> CLI tool for discord.js </p>
 </p>
 
-
 ---
 
-**Chat: _[Discord group]( https://discord.gg/m8297QY)_**
+**Chat: _[Discord group](https://discord.gg/m8297QY)_**
 
-A CLI tool for getting started with the discord.js. The acronym “DisNode” stands for “discord.js Node.js”. It offers a super simple boilerplate template and additional utilities for building a discord.js based discord bot. It takes away the hassle of setting up the local development environment which may become a nightmare especially for beginners who are just starting out.
+A CLI tool for getting started with the discord.js. The acronym “disnod” stands for “discord.js Node.js”. It offers a super simple boilerplate template and additional utilities for building a discord.js based discord bot. It takes away the hassle of setting up the local development environment which may become a nightmare especially for beginners who are just starting out.
 
-- [Basic](https://github.com/Bot-Academia/Disnode/tree/master/template/basic)
-- [Default](https://github.com/Bot-Academia/Disnode/tree/master/template/default)
-- [Advanced](https://github.com/Bot-Academia/Disnode/tree/master/template/advanced)
+- [Basic](https://github.com/Bot-Academia/disnod/tree/master/template/basic)
+- [Default](https://github.com/Bot-Academia/disnod/tree/master/template/default)
+- [Advanced](https://github.com/Bot-Academia/disnod/tree/master/template/advanced)
 
 ## Installation
 
@@ -23,34 +22,33 @@ A CLI tool for getting started with the discord.js. The acronym “DisNode” st
 
 ## Quickstart
 
-``` bash
-npm install -g disnode
-disnode create <botname>
+```bash
+npm install -g disnod
+disnod create <botname>
 ```
 
 ### Available Commands
 
- `Disnode` offers the following set of commands:-
+`disnod` offers the following set of commands:-
 
-| command | description |                                                                                                
-| -------------- |  ---------------- |
-| disnode create <botname> | Scaffolds a discord bot project in the current path |
-| disnode help | fetches the help menu |
+| command                 | description                                         |
+| ----------------------- | --------------------------------------------------- |
+| disnod create <botname> | Scaffolds a discord bot project in the current path |
+| disnod help             | fetches the help menu                               |
 
 ## Features
 
 - It allows Developers to build discord bots with ease in which all the local environment setup is being taken care of. All they have to do is to focus on writing actual code.
-- Disnode simplifies developer workflow by generating boilerplate code as required and automating redundant tasks.
+- disnod simplifies developer workflow by generating boilerplate code as required and automating redundant tasks.
 - It packs all the basic setup instructions given at [Discord.js Guide](https://discordjs.guide/)
 
 ## Versioning And Help
 
-| option | description
-| --- | --- |
-| -V, --version | Check CLI version |
-| -h, --help | Get help and check usage |
-
+| option        | description              |
+| ------------- | ------------------------ |
+| -V, --version | Check CLI version        |
+| -h, --help    | Get help and check usage |
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Bot-Academia/Disnode/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Bot-Academia/disnod/blob/master/LICENSE) file for details.

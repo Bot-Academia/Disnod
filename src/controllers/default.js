@@ -17,7 +17,7 @@ module.exports = {
 
     axios
       .get(
-        "https://api.github.com/repos/Bot-Academia/disnode/contents/template/default"
+        "https://api.github.com/repos/Bot-Academia/disnod/contents/template/default"
       )
       .then(async (res) => {
         arr = res.data;
@@ -29,7 +29,7 @@ module.exports = {
           if (arr[i].type === "file") {
             await axios
               .get(
-                `https://api.github.com/repos/Bot-Academia/disnode/contents/template/default/${name}`
+                `https://api.github.com/repos/Bot-Academia/disnod/contents/template/default/${name}`
               )
               .then((res) => {
                 text = res.data.content;
@@ -51,7 +51,7 @@ module.exports = {
 
             await axios
               .get(
-                "https://api.github.com/repos/Bot-Academia/disnode/contents/template/default/commands"
+                "https://api.github.com/repos/Bot-Academia/disnod/contents/template/default/commands"
               )
               .then(async (res) => {
                 a = res.data;
@@ -63,7 +63,7 @@ module.exports = {
                   if (a[j].type === "file") {
                     await axios
                       .get(
-                        `https://api.github.com/repos/Bot-Academia/disnode/contents/template/default/commands/${name}`
+                        `https://api.github.com/repos/Bot-Academia/disnod/contents/template/default/commands/${name}`
                       )
                       .then((res) => {
                         text = res.data.content;

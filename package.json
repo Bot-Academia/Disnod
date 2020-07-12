@@ -1,5 +1,5 @@
 {
-  "name": "disnode",
+  "name": "disnod",
   "version": "1.0.0",
   "description": "Discord.js CLI tool",
   "main": "./bin/index.js",
@@ -8,7 +8,7 @@
     "src"
   ],
   "bin": {
-    "disnode": "./bin/index.js"
+    "disnod": "./bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bot-Academia/Disnode.git"
+    "url": "git+https://github.com/Bot-Academia/disnod.git"
   },
   "keywords": [
     "node.js",
@@ -31,9 +31,9 @@
   "author": "Bot-Academia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Bot-Academia/Disnode/issues"
+    "url": "https://github.com/Bot-Academia/disnod/issues"
   },
-  "homepage": "https://github.com/Bot-Academia/Disnode/blob/master/README.md",
+  "homepage": "https://github.com/Bot-Academia/disnod/blob/master/README.md",
   "dependencies": {
     "axios": "^0.19.2",
     "chalk": "^4.1.0",
