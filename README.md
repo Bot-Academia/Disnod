@@ -1,5 +1,5 @@
 <p align="center">
-	<a href="https://mevn.madlabs.xyz"><img src="https://user-images.githubusercontent.com/54861487/87247177-cf816880-c46f-11ea-929d-5ee37ad73a5f.jpg" width="350px" /></a>
+	<a href="https://mevn.madlabs.xyz"><img src="https://user-images.githubusercontent.com/54861487/87247177-cf816880-c46f-11ea-929d-5ee37ad73a5f.jpg"  /></a>
 	<p align="center"> CLI tool for discord.js </p>
 </p>
 
