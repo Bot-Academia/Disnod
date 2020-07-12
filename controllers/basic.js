@@ -53,35 +53,22 @@ module.exports = {
             ` "author": "` + author + `",`
           );
 
-          fs.writeFile(`${appname}/package.json`, newValue, "utf-8", function (
-            err,
-            data
-          ) {
-            if (err) throw err;
-          });
-        });
-        fs.readFile(`${appname}/package.json`, "utf-8", function (err, data) {
-          if (err) throw err;
-
-          var newValue = data.replace(
+          var value = data.replace(
             /"name": "discordbot",/gim,
             ` "name": "` + appname + `",`
           );
 
-          fs.writeFile(`${appname}/package.json`, newValue, "utf-8", function (
-            err,
-            data
-          ) {
-            if (err) throw err;
-            console.log("\n \n");
-            console.log(
-              chalk.red("Follow the given commands to run your bot!")
-            );
-            console.log(`  ` + chalk.green(`\n  cd ${appname}`));
-            console.log(`  ` + chalk.green(`\n  npm install`));
-            console.log(`  ` + chalk.green(`\n  npm start`));
-          });
+          fs.writeFile(
+            `${appname}/package.json`,
+            [newValue, value],
+            "utf-8",
+            function (err, data) {
+              if (err) throw err;
+              console.log("Done!");
+            }
+          );
         });
+
         try {
           await execa("npm", ["install"], {
             cwd: process.cwd() + "/" + appname,
