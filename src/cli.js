@@ -4,7 +4,7 @@ const showBanner = require("node-banner");
 const { version } = require("../package");
 const chalk = require("chalk");
 
-const create = require("../commands/create");
+const create = require("./commands/create");
 const pkg = require("../package");
 
 // register version flag

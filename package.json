@@ -14,9 +14,26 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix ./src"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bot-Academia/Disnode.git"
+  },
+  "keywords": [
+    "node.js",
+    "commander.js",
+    "inquirer.js",
+    "shell.js",
+    "cli",
+    "discord.js",
+    "discord",
+    "discord bot"
+  ],
+  "author": "Bot-Academia",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bot-Academia/Disnode/issues"
+  },
+  "homepage": "https://github.com/Bot-Academia/Disnode/blob/master/README.md",
   "dependencies": {
     "axios": "^0.19.2",
     "chalk": "^4.1.0",
