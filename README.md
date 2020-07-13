@@ -12,7 +12,8 @@
 	<a href="https://www.npmjs.com/package/disnod"><img src="https://img.shields.io/npm/v/disnod?style=for-the-badge" alt="npm version" /></a>
 	<a href="https://www.npmjs.com/package/disnod"><img src="https://img.shields.io/npm/dw/disnod?style=for-the-badge" alt="Downloads" /></a>
 </p>
-**Chat: _[Discord group](https://discord.gg/m8297QY)_**
+
+**Chat: [Discord group](https://discord.gg/m8297QY)**
 
 A CLI tool for getting started with the discord.js. The acronym “disnod” stands for “discord.js Node.js”. It offers a super simple boilerplate template and additional utilities for building a discord.js based discord bot. It takes away the hassle of setting up the local development environment which may become a nightmare especially for beginners who are just starting out.
 
