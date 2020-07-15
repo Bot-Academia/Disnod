@@ -5,6 +5,8 @@
 
 ---
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4f6ed3abbced4461a12322b84f537b47)](https://app.codacy.com/gh/Bot-Academia/Disnod?utm_source=github.com&utm_medium=referral&utm_content=Bot-Academia/Disnod&utm_campaign=Badge_Grade_Dashboard)
+
 <p align="center">
 	<a href="https://nodei.co/npm/disnod/"><img src="https://nodei.co/npm/disnod.png?downloads=true&downloadRank=true&stars=true" alt="npm version" /></a>
 </p>
